@@ -1,6 +1,6 @@
-package com.ai4everyone.tutorial.copymechanisms;
+package com.nexora.software.copymechanisms;
 
-import com.ai4everyone.tutorial.copymechanisms.model.*;
+import com.nexora.software.copymechanisms.model.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import org.apache.commons.lang3.SerializationUtils;
@@ -14,11 +14,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ApplicationTest {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ApplicationTest.class);
+    private static final Logger log = LoggerFactory.getLogger(ApplicationTest.class);
 
     @Test
     void givenAddressAndUser_whenModifyOriginalObject_thenShallowCopyObjectShouldChange() {
-        LOGGER.info("ApplicationTest#givenAddressAndUser_whenModifyOriginalObject_thenShallowCopyObjectShouldChange");
+        log.info("ApplicationTest#givenAddressAndUser_whenModifyOriginalObject_thenShallowCopyObjectShouldChange");
 
         var address = new Address("city", "country");
         var user = new User("name", "family", address);
@@ -35,7 +35,7 @@ class ApplicationTest {
 
     @Test
     void givenAddressAndUser_whenModifyOriginalObject_thenDeepCopyObjectShouldChange() {
-        LOGGER.info("ApplicationTest#givenAddressAndUser_whenModifyOriginalObject_thenDeepCopyObjectShouldChange");
+        log.info("ApplicationTest#givenAddressAndUser_whenModifyOriginalObject_thenDeepCopyObjectShouldChange");
 
         var address = new Address("city", "country");
         var user = new User("name", "family", address);
@@ -52,7 +52,7 @@ class ApplicationTest {
 
     @Test
     public void givenAccountAndCustomer_whenModifyingOriginalObject_thenCloneCopyShouldNotChange() {
-        LOGGER.info("ApplicationTest#givenAccountAndCustomer_whenModifyingOriginalObject_thenCloneCopyShouldNotChange");
+        log.info("ApplicationTest#givenAccountAndCustomer_whenModifyingOriginalObject_thenCloneCopyShouldNotChange");
 
         var account = new Account("accountId", true);
         var customer = new Customer("name", "family", account);
@@ -69,7 +69,7 @@ class ApplicationTest {
 
     @Test
     public void givenAccountAndCustomer_whenModifyOriginalObject_thenCommonsCloneShouldNotChange() {
-        LOGGER.info("ApplicationTest#givenAccountAndCustomer_whenModifyOriginalObject_thenCommonsCloneShouldNotChange");
+        log.info("ApplicationTest#givenAccountAndCustomer_whenModifyOriginalObject_thenCommonsCloneShouldNotChange");
 
         var account = new Account("accountId", true);
         var customer = new Customer("name", "family", account);
@@ -86,7 +86,7 @@ class ApplicationTest {
 
     @Test
     public void givenAccountAndCustomer_whenModifyOriginalObject_thenGsonCloneShouldNotChange() {
-        LOGGER.info("ApplicationTest#givenAccountAndCustomer_whenModifyOriginalObject_thenGsonCloneShouldNotChange");
+        log.info("ApplicationTest#givenAccountAndCustomer_whenModifyOriginalObject_thenGsonCloneShouldNotChange");
 
         var account = new Account("accountId", true);
         var customer = new Customer("name", "family", account);
@@ -104,7 +104,7 @@ class ApplicationTest {
 
     @Test
     public void givenAccountAndCustomer_whenModifyOriginalObject_thenJacksonCopyShouldNotChange() throws IOException {
-        LOGGER.info("ApplicationTest#givenAccountAndCustomer_whenModifyOriginalObject_thenJacksonCopyShouldNotChange");
+        log.info("ApplicationTest#givenAccountAndCustomer_whenModifyOriginalObject_thenJacksonCopyShouldNotChange");
 
         var account = new Account("accountId", true);
         var customer = new Customer("name", "family", account);

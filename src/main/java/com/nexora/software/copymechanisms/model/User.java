@@ -1,4 +1,4 @@
-package com.ai4everyone.tutorial.copymechanisms.model;
+package com.nexora.software.copymechanisms.model;
 
 public class User {
     private String name;

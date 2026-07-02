@@ -12,7 +12,7 @@
     <appender name="CONTAINER" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <append>true</append>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${basedir}/${LOG_DIR}/${LOG_FILE}-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>${LOG_DIR}/${LOG_FILE}-%d{yyyy-MM-dd}.log</fileNamePattern>
             <totalSizeCap>3GB</totalSizeCap>
             <maxHistory>7</maxHistory>
         </rollingPolicy>
@@ -21,7 +21,7 @@
         </encoder>
     </appender>
 
-    <logger name="com.ai4everyone.tutorial" level="INFO" additivity="false">
+    <logger name="com.nexora.software" level="INFO" additivity="false">
         <appender-ref ref="CONTAINER"/>
     </logger>
 
